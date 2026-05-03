@@ -12,12 +12,14 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{prepfusion_style}[2026/05/01 PrepFusion LaTeX Style v1.0]
 
+\usepackage{tfrupee}
 %% ============================================================
 %% §1  ENCODING & LANGUAGE
 %% ============================================================
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[english]{babel}
+
 
 %% ============================================================
 %% §2  PAGE GEOMETRY
@@ -105,11 +107,10 @@
   [\vspace{4pt}\titlerule]                   % after-code
 
 %% Section heading ─── bold sans, pfBlue, slight rule
-\titleformat{\section}
-  {\sffamily\bfseries\Large\color{pfBlue}}
-  {\thesection}
-  {1em}{}
-  [\color{pfOrange}\titlerule[1pt]]
+\titleformat{\section}[block]
+  {\sffamily\bfseries\normalsize\color{pfOrange}}
+  {\thesection}{0.6em}{}
+
 
 %% Subsection heading
 \titleformat{\subsection}
@@ -198,10 +199,10 @@
   urlcolor    = pfOrange,
   citecolor   = pfGreen,
   filecolor   = pfBlue,
-  pdftitle    = {GATE Counseling, Admission Process \& PSU Recruitment},
+  pdftitle    = {GATE Counseling Admission Process PSU Recruitment},
   pdfauthor   = {PrepFusion},
   pdfsubject  = {GATE 2026 Guide},
-  pdfkeywords = {GATE, MTech, IIT, NIT, IISc, PSU, COAP, CCMT, VLSI},
+  pdfkeywords = {GATE MTech IIT NIT IISc PSU COAP CCMT VLSI},
   bookmarks   = true,
   bookmarksopen = true,
   pdfpagemode = UseOutlines,
@@ -285,7 +286,7 @@
   colbacktitle = pfOrange,
   coltitle   = white,
   fonttitle  = \sffamily\bfseries\small,
-  title      = {\faCalendarAlt\quad Important Date\ifx&#1&\else:\ #1\fi},
+  title      = {\faCalendar\quad Important Date\ifx&#1&\else:\ #1\fi},
   arc        = 4pt,
   boxrule    = 1pt,
   left       = 6pt,
