@@ -1,0 +1,545 @@
+%% ============================================================
+%% prepfusion_style.sty
+%% PrepFusion LaTeX Style Package
+%% GATE Counseling, Admission Process & PSU Recruitment Guide
+%%
+%% Author : PrepFusion Dev Team
+%% Version: 1.0  (May 2026)
+%%
+%% Usage  : \usepackage{prepfusion_style}  in main.tex
+%% ============================================================
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{prepfusion_style}[2026/05/01 PrepFusion LaTeX Style v1.0]
+
+%% ============================================================
+%% §1  ENCODING & LANGUAGE
+%% ============================================================
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[english]{babel}
+
+%% ============================================================
+%% §2  PAGE GEOMETRY
+%%     Inner 25mm for binding; outer 35mm for margin-notes;
+%%     top/bottom 20mm as per design spec.
+%% ============================================================
+\RequirePackage[
+  a4paper,
+  inner  = 25mm,
+  outer  = 35mm,
+  top    = 20mm,
+  bottom = 20mm,
+  includeheadfoot
+]{geometry}
+
+%% ============================================================
+%% §3  FONTS  (compile with XeLaTeX or LuaLaTeX)
+%%     Sans-serif headings  → Montserrat (modern, digital-first)
+%%     Serif body           → TeX Gyre Pagella (Palatino clone)
+%%     Monospace technical  → Fira Code
+%%     Fallback message if engine is pdfLaTeX.
+%% ============================================================
+\RequirePackage{iftex}
+
+\ifXeTeX
+  \RequirePackage{fontspec}
+  \RequirePackage{unicode-math}
+  \setmainfont{TeX Gyre Pagella}          % Palatino-style serif body
+  \setsansfont{Montserrat}[              % Modern sans headings
+    BoldFont    = {Montserrat-Bold},
+    ItalicFont  = {Montserrat-Italic}
+  ]
+  \setmonofont{Fira Code}[               % Code / technical snippets
+    Scale = 0.88
+  ]
+\else\ifLuaTeX
+  \RequirePackage{fontspec}
+  \RequirePackage{unicode-math}
+  \setmainfont{TeX Gyre Pagella}
+  \setsansfont{Montserrat}[
+    BoldFont    = {Montserrat-Bold},
+    ItalicFont  = {Montserrat-Italic}
+  ]
+  \setmonofont{Fira Code}[Scale = 0.88]
+\else
+  %% pdfLaTeX fallback – acceptable quality, no Montserrat
+  \RequirePackage{tgpagella}             % Palatino clone
+  \RequirePackage[scaled=0.92]{helvet}   % Helvetica for headings
+  \RequirePackage[scaled=0.85]{FiraMono} % Fira Mono (approx.)
+  \renewcommand{\familydefault}{\rmdefault}
+\fi\fi
+
+%% ============================================================
+%% §4  COLOR PALETTE  (Modern Ed-Tech, design spec §2.A)
+%%     All names prefixed "pf" to avoid collisions.
+%% ============================================================
+\RequirePackage[dvipsnames, table, x11names]{xcolor}
+
+\definecolor{pfBlue}{HTML}{1A365D}       % Primary Blue  – headers / section titles
+\definecolor{pfOrange}{HTML}{F68059}     % Accent Orange – links / action boxes
+\definecolor{pfGreen}{HTML}{2D6A4F}      % Success Green – PSU "Selected", eligibility
+\definecolor{pfGrey}{HTML}{F7FAFC}       % Neutral Grey  – table backgrounds
+\definecolor{pfDarkGrey}{HTML}{4A5568}   % Dark Grey      – body text accents
+\definecolor{pfLightBlue}{HTML}{EBF4FF}  % Light Blue     – pro-tip box background
+\definecolor{pfLightOrange}{HTML}{FFF3ED}% Light Orange   – deadline box background
+\definecolor{pfLightGreen}{HTML}{EAFAF1} % Light Green    – eligibility box background
+\definecolor{pfLightGrey}{HTML}{F8F9FA}  % Very light grey– disclaimer box background
+
+%% Row colors for zebra-striped tables
+\colorlet{pfRowOdd}{white}
+\colorlet{pfRowEven}{pfGrey}
+
+%% ============================================================
+%% §5  SECTION / CHAPTER HEADINGS
+%%     Chapter titles: large sans-serif in pfBlue
+%% ============================================================
+\RequirePackage{titlesec}
+
+%% Chapter heading ─── bold Montserrat, rule below
+\titleformat{\chapter}[display]
+  {\sffamily\bfseries\huge\color{pfBlue}}   % format
+  {\chaptertitlename\ \thechapter}           % label
+  {10pt}                                      % sep
+  {\titlerule[2pt]\vspace{6pt}}              % before-code
+  [\vspace{4pt}\titlerule]                   % after-code
+
+%% Section heading ─── bold sans, pfBlue, slight rule
+\titleformat{\section}
+  {\sffamily\bfseries\Large\color{pfBlue}}
+  {\thesection}
+  {1em}{}
+  [\color{pfOrange}\titlerule[1pt]]
+
+%% Subsection heading
+\titleformat{\subsection}
+  {\sffamily\bfseries\large\color{pfDarkGrey}}
+  {\thesubsection}
+  {1em}{}
+
+%% Subsubsection heading
+\titleformat{\subsubsection}
+  {\sffamily\bfseries\normalsize\color{pfDarkGrey}}
+  {\thesubsubsection}
+  {1em}{}
+
+%% Spacing around titles
+\titlespacing*{\chapter}    {0pt}{*2}{*3}
+\titlespacing*{\section}    {0pt}{*3}{*1.5}
+\titlespacing*{\subsection} {0pt}{*2}{*1}
+
+%% ============================================================
+%% §6  HEADERS & FOOTERS  (fancyhdr)
+%%     Header  : Chapter > Section breadcrumb  |  logo (right)
+%%     Footer  : "PrepFusion | GATE 2026 Counseling Guide"  |  X of Y
+%% ============================================================
+\RequirePackage{fancyhdr}
+\RequirePackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}  % clear all defaults
+
+%% --- Header ---
+\fancyhead[LE,RO]{%
+  % Right header: logo placeholder (replace logo.png with your file)
+  \raisebox{-3pt}{\includegraphics[height=22pt]{logo.png}}%
+}
+\fancyhead[LO,RE]{%
+  % Left header: breadcrumb  "Chapter X  >  Current Section"
+  \sffamily\footnotesize\color{pfDarkGrey}%
+  \leftmark%          chapter mark
+  \ifx\rightmark\empty\else\ \textcolor{pfOrange}{\textbf{>}}\ \rightmark\fi
+}
+
+%% --- Footer ---
+\fancyfoot[LE,LO]{%
+  \sffamily\footnotesize\color{pfDarkGrey}%
+  \textbf{PrepFusion}\ \textbar\ GATE 2026 Counseling Guide%
+}
+\fancyfoot[RE,RO]{%
+  \sffamily\footnotesize\color{pfDarkGrey}%
+  Page \textbf{\thepage}\ of \textbf{\pageref*{LastPage}}%
+}
+
+%% --- Horizontal rules in header/footer ---
+\renewcommand{\headrulewidth}{0.6pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+%% Chapter opening page style (plain)
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[C]{%
+    \sffamily\footnotesize\color{pfDarkGrey}%
+    Page \textbf{\thepage}\ of \textbf{\pageref*{LastPage}}%
+  }
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0.4pt}
+}
+
+%% ============================================================
+%% §7  TABLE OF CONTENTS DEPTH & STYLING
+%% ============================================================
+\setcounter{tocdepth}{2}        % Show only section + subsection
+\setcounter{secnumdepth}{3}     % Number down to subsubsection
+
+\RequirePackage{tocloft}        % Style the TOC lines
+\renewcommand{\cfttoctitlefont}{\sffamily\bfseries\Large\color{pfBlue}}
+\renewcommand{\cftchapfont}    {\sffamily\bfseries\color{pfBlue}}
+\renewcommand{\cftsecfont}     {\sffamily\color{pfDarkGrey}}
+\renewcommand{\cftsubsecfont} {\rmfamily\small\color{pfDarkGrey}}
+\renewcommand{\cftchapleader} {\cftdotfill{\cftchapdotsep}}
+
+%% ============================================================
+%% §8  HYPERLINKS  (hyperref – must load late)
+%% ============================================================
+\RequirePackage[
+  colorlinks  = true,
+  linkcolor   = pfBlue,
+  urlcolor    = pfOrange,
+  citecolor   = pfGreen,
+  filecolor   = pfBlue,
+  pdftitle    = {GATE Counseling, Admission Process \& PSU Recruitment},
+  pdfauthor   = {PrepFusion},
+  pdfsubject  = {GATE 2026 Guide},
+  pdfkeywords = {GATE, MTech, IIT, NIT, IISc, PSU, COAP, CCMT, VLSI},
+  bookmarks   = true,
+  bookmarksopen = true,
+  pdfpagemode = UseOutlines,
+  hypertexnames = false
+]{hyperref}
+
+%% ============================================================
+%% §9  TABLES  (booktabs + tabularray for long tables)
+%% ============================================================
+\RequirePackage{booktabs}         % \toprule, \midrule, \bottomrule
+\RequirePackage{multirow}         % \multirow for merged cells
+\RequirePackage{tabularray}       % Modern table package for long/complex tables
+\UseTblrLibrary{booktabs}         % booktabs rules inside tabularray
+
+%% ============================================================
+%% §10  LISTS (enumitem)
+%% ============================================================
+\RequirePackage{enumitem}
+
+%% Global list settings – tighten spacing slightly
+\setlist{
+  itemsep   = 3pt,
+  parsep    = 0pt,
+  topsep    = 4pt,
+  partopsep = 0pt
+}
+
+%% Custom list styles
+\newlist{pfChecklist}{itemize}{1}
+\setlist[pfChecklist]{
+  label     = \textcolor{pfGreen}{\checkmark},
+  leftmargin= 2em,
+  itemsep   = 2pt
+}
+
+\newlist{pfActionList}{itemize}{1}
+\setlist[pfActionList]{
+  label     = \textcolor{pfOrange}{\textbullet},
+  leftmargin= 2em,
+  itemsep   = 2pt
+}
+
+%% ============================================================
+%% §11  CALLOUT BOXES (tcolorbox)
+%%     Three environments per design spec §3.B
+%% ============================================================
+\RequirePackage[most]{tcolorbox}
+
+%% ──────────────────────────────────────────────────────────
+%% (a) Pro-Tip box  [Blue]
+%%     Usage: \begin{protip}{Title text}  ...  \end{protip}
+%% ──────────────────────────────────────────────────────────
+\newtcolorbox{protip}[1][]{%
+  enhanced,
+  breakable,
+  colback    = pfLightBlue,
+  colframe   = pfBlue,
+  colbacktitle = pfBlue,
+  coltitle   = white,
+  fonttitle  = \sffamily\bfseries\small,
+  title      = {\faLightbulb\quad Pro-Tip\ifx&#1&\else: #1\fi},
+  arc        = 4pt,
+  boxrule    = 1pt,
+  left       = 6pt,
+  right      = 6pt,
+  top        = 4pt,
+  bottom     = 4pt,
+  before skip= 8pt,
+  after skip = 8pt,
+}
+
+%% ──────────────────────────────────────────────────────────
+%% (b) Important Dates / Deadlines box  [Orange]
+%%     Usage: \begin{deadline}{Round / Event Name}  ...  \end{deadline}
+%% ──────────────────────────────────────────────────────────
+\newtcolorbox{deadline}[1][]{%
+  enhanced,
+  breakable,
+  colback    = pfLightOrange,
+  colframe   = pfOrange,
+  colbacktitle = pfOrange,
+  coltitle   = white,
+  fonttitle  = \sffamily\bfseries\small,
+  title      = {\faCalendarAlt\quad Important Date\ifx&#1&\else:\ #1\fi},
+  arc        = 4pt,
+  boxrule    = 1pt,
+  left       = 6pt,
+  right      = 6pt,
+  top        = 4pt,
+  bottom     = 4pt,
+  before skip= 8pt,
+  after skip = 8pt,
+}
+
+%% ──────────────────────────────────────────────────────────
+%% (c) Eligibility Alert box  [Green]
+%%     Usage: \begin{eligalert}{Title}  ...  \end{eligalert}
+%% ──────────────────────────────────────────────────────────
+\newtcolorbox{eligalert}[1][]{%
+  enhanced,
+  breakable,
+  colback    = pfLightGreen,
+  colframe   = pfGreen,
+  colbacktitle = pfGreen,
+  coltitle   = white,
+  fonttitle  = \sffamily\bfseries\small,
+  title      = {\faCheckCircle\quad Eligibility Alert\ifx&#1&\else:\ #1\fi},
+  arc        = 4pt,
+  boxrule    = 1pt,
+  left       = 6pt,
+  right      = 6pt,
+  top        = 4pt,
+  bottom     = 4pt,
+  before skip= 8pt,
+  after skip = 8pt,
+}
+
+%% ──────────────────────────────────────────────────────────
+%% (d) Disclaimer box  [Grey]
+%%     Usage: \begin{disclaimer}  ...  \end{disclaimer}
+%% ──────────────────────────────────────────────────────────
+\newtcolorbox{disclaimer}{%
+  enhanced,
+  breakable,
+  colback    = pfLightGrey,
+  colframe   = pfDarkGrey,
+  colbacktitle = pfDarkGrey,
+  coltitle   = white,
+  fonttitle  = \sffamily\bfseries\small,
+  title      = {\faExclamationTriangle\quad Disclaimer},
+  arc        = 4pt,
+  boxrule    = 0.8pt,
+  left       = 6pt,
+  right      = 6pt,
+  top        = 4pt,
+  bottom     = 4pt,
+  before skip= 8pt,
+  after skip = 8pt,
+}
+
+%% ──────────────────────────────────────────────────────────
+%% (e) Interview Experience box
+%%     Usage: \begin{experience}{Student Name}{Institute}  ...  \end{experience}
+%% ──────────────────────────────────────────────────────────
+\newtcolorbox{experience}[2]{%
+  enhanced,
+  breakable,
+  colback      = pfLightGrey,
+  colframe     = pfBlue,
+  colbacktitle = pfBlue!85!black,
+  coltitle     = white,
+  fonttitle    = \sffamily\bfseries\small,
+  title        = {\faUserGraduate\quad Interview Experience\quad\textbar\quad #1\quad(\textit{#2})},
+  arc          = 6pt,
+  boxrule      = 1.2pt,
+  left         = 8pt,
+  right        = 8pt,
+  top          = 6pt,
+  bottom       = 6pt,
+  before skip  = 10pt,
+  after skip   = 10pt,
+  attach boxed title to top left = {yshift=-2mm, xshift=4mm},
+  boxed title style = {
+    colback = pfBlue!85!black,
+    arc     = 3pt,
+    boxrule = 0pt
+  },
+}
+
+%% ──────────────────────────────────────────────────────────
+%% (f) FAQ entry environment
+%%     Usage: \begin{faqentry}{Q text}  Answer text  \end{faqentry}
+%% ──────────────────────────────────────────────────────────
+\newenvironment{faqentry}[1]{%
+  \vspace{6pt}
+  \noindent\textcolor{pfBlue}{\sffamily\bfseries Q:\enspace}%
+  \textbf{#1}\par
+  \vspace{2pt}
+  \noindent\textcolor{pfGreen}{\sffamily\bfseries A:\enspace}\ignorespaces
+}{%
+  \par\vspace{4pt}
+}
+
+%% ============================================================
+%% §12  WATERMARK (optional toggle)
+%%     Toggle by adding \watermarkon or \watermarkoff in main.tex
+%% ============================================================
+\RequirePackage{draftwatermark}
+\DraftwatermarkOptions{
+  text    = {PrepFusion},
+  color   = pfBlue!8,          % Very light, transparent feel
+  angle   = 45,
+  scale   = 3.5,
+  hpos    = 0.5\paperwidth,
+  vpos    = 0.5\paperheight,
+}
+% Default: watermark OFF.  Uncomment \SetWatermarkText{PrepFusion} in main.tex to enable.
+\DraftwatermarkOptions{text={}}
+
+%% Convenience commands
+\newcommand{\watermarkon}{%
+  \DraftwatermarkOptions{text={PrepFusion}}%
+}
+\newcommand{\watermarkoff}{%
+  \DraftwatermarkOptions{text={}}%
+}
+
+%% ============================================================
+%% §13  GRAPHICS & FIGURES
+%% ============================================================
+\RequirePackage{graphicx}
+\RequirePackage{float}
+\RequirePackage{caption}
+\RequirePackage{subcaption}
+
+\captionsetup{
+  font       = {small, sf},
+  labelfont  = {bf, color=pfBlue},
+  labelsep   = period,
+  skip       = 6pt
+}
+
+%% ============================================================
+%% §14  MATH
+%% ============================================================
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+
+%% ============================================================
+%% §15  TikZ / FLOWCHARTS
+%%     Pre-configured process-flow style per design spec §4.B
+%% ============================================================
+\RequirePackage{tikz}
+\usetikzlibrary{arrows.meta, shapes.geometric, positioning, chains, shadows}
+
+%% Reusable TikZ styles for admission/process flowcharts
+\tikzset{
+  pfStep/.style = {
+    rectangle,
+    rounded corners = 6pt,
+    draw            = pfBlue,
+    fill            = pfLightBlue,
+    text width      = 3.2cm,
+    align           = center,
+    minimum height  = 1cm,
+    font            = \sffamily\small\color{pfBlue},
+    drop shadow
+  },
+  pfDecision/.style = {
+    diamond,
+    draw            = pfOrange,
+    fill            = pfLightOrange,
+    text width      = 2.6cm,
+    align           = center,
+    inner sep       = 4pt,
+    font            = \sffamily\small\color{pfOrange},
+    drop shadow
+  },
+  pfArrow/.style = {
+    -{Stealth[length=7pt]},
+    thick,
+    color = pfDarkGrey
+  }
+}
+
+%% ============================================================
+%% §16  CODE LISTINGS
+%% ============================================================
+\RequirePackage{listings}
+\lstset{
+  basicstyle   = \ttfamily\small,
+  keywordstyle = \color{pfBlue}\bfseries,
+  commentstyle = \color{pfGreen}\itshape,
+  stringstyle  = \color{pfOrange},
+  breaklines   = true,
+  frame        = single,
+  framerule    = 0.5pt,
+  rulecolor    = \color{pfDarkGrey},
+  backgroundcolor = \color{pfLightGrey},
+  tabsize      = 2,
+  showstringspaces = false,
+  numbers      = left,
+  numberstyle  = \tiny\color{pfDarkGrey},
+  numbersep    = 8pt,
+}
+
+%% ============================================================
+%% §17  FONTAWESOME ICONS  (used in callout box titles)
+%%     Requires fontawesome5 package.
+%% ============================================================
+\RequirePackage{fontawesome5}
+
+%% ============================================================
+%% §18  MISCELLANEOUS UTILITIES
+%% ============================================================
+\RequirePackage{microtype}         % Better line-breaking / spacing
+\RequirePackage{parskip}           % Space between paragraphs, no indent
+\RequirePackage{setspace}          % Line spacing control
+\setstretch{1.15}                  % Slightly open line spacing for readability
+\RequirePackage{xspace}            % Smart spacing after macros
+\RequirePackage{marginnote}        % Margin annotations
+\RequirePackage{mdframed}          % Additional framed boxes if needed
+\RequirePackage{etoolbox}          % General programming tools
+
+%% ============================================================
+%% §19  CUSTOM MACROS & SHORTHAND
+%% ============================================================
+
+%% Styled brand name
+\newcommand{\PrepFusion}{\textbf{\textcolor{pfBlue}{PrepFusion}}\xspace}
+
+%% Portal names
+\newcommand{\COAP}{\textsc{coap}\xspace}
+\newcommand{\CCMT}{\textsc{ccmt}\xspace}
+\newcommand{\GATE}{\textsc{gate}\xspace}
+\newcommand{\PGEE}{\textsc{pgee}\xspace}
+
+%% Score / rank formatting
+\newcommand{\score}[1]{\textbf{\textcolor{pfGreen}{#1}}}
+\newcommand{\rank}[1]{\textbf{\textcolor{pfBlue}{Rank #1}}}
+\newcommand{\cutoff}[1]{\textbf{\textcolor{pfOrange}{#1+}}}
+
+%% Section divider rule
+\newcommand{\sectionrule}{%
+  \vspace{4pt}%
+  {\color{pfOrange}\rule{\linewidth}{0.8pt}}%
+  \vspace{4pt}%
+}
+
+%% Institute name emphasis
+\newcommand{\inst}[1]{\textbf{\textcolor{pfBlue}{#1}}}
+
+%% Margin tip shortcut
+\newcommand{\margintip}[1]{%
+  \marginnote{\tiny\sffamily\color{pfDarkGrey}#1}
+}
+
+%% ============================================================
+%%  END OF STYLE FILE
+%% ============================================================
+\endinput

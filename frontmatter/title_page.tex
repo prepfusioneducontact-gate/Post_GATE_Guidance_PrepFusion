@@ -1,0 +1,66 @@
+%% ============================================================
+%%  frontmatter/title_page.tex
+%%  PrepFusion – Branded Title Page
+%% ============================================================
+
+\begin{titlepage}
+  \thispagestyle{empty}
+  \pagecolor{pfBlue}            % Full-page primary blue background
+  \color{white}
+
+  \vspace*{2cm}
+
+  %% ── Top logo area ────────────────────────────────────────
+  \begin{center}
+    % Replace logo.png with your actual logo file
+    \includegraphics[width=5cm]{logo.png}\\[1.5cm]
+
+    %% ── Top rule ──────────────────────────────────────────
+    {\color{pfOrange}\rule{0.6\linewidth}{3pt}}\\[1cm]
+
+    %% ── Title ─────────────────────────────────────────────
+    {\fontsize{34}{40}\sffamily\bfseries
+      GATE Counseling,\\[6pt]
+      Admission Process\\[6pt]
+      \&\\[6pt]
+      PSU Recruitment}\\[1.2cm]
+
+    %% ── Subtitle ──────────────────────────────────────────
+    {\fontsize{16}{22}\sffamily\itshape
+      The Complete Student Guide for ECE/EE Engineers}\\[0.8cm]
+
+    {\color{pfOrange}\rule{0.6\linewidth}{3pt}}\\[1.5cm]
+
+    %% ── Edition badge ─────────────────────────────────────
+    {\fontsize{13}{18}\sffamily
+      \textbf{GATE 2026 Edition}\\[0.4cm]
+      Continuously Updated\ \textbullet\ Community-Sourced}\\[2cm]
+
+    %% ── Authors / community credit ────────────────────────
+    {\fontsize{11}{16}\sffamily
+      Compiled by \textbf{PrepFusion}\\[0.3cm]
+      Special thanks to Srijan Dwivedi, Palak Agarwal,\\
+      Sangrag, Nilimay, Ravi, Deepto \& the PrepFusion Community}\\[1.5cm]
+
+    %% ── Website ───────────────────────────────────────────
+    {\fontsize{12}{16}\sffamily
+      \href{https://www.prepfusion.in}{\textcolor{pfOrange}{\textbf{www.PrepFusion.in}}}
+      \quad\textbullet\quad
+      \href{https://youtube.com/@PrepFusion-GATE}{\textcolor{pfOrange}{\textbf{YouTube: @PrepFusion-GATE}}}}
+
+  \end{center}
+
+  \vfill
+
+  %% ── Bottom bar ───────────────────────────────────────────
+  \begin{center}
+    {\small\sffamily
+      \textcopyright\ 2026 PrepFusion. All rights reserved.\\
+      This document is proprietary. Do not redistribute without permission.}
+  \end{center}
+
+\end{titlepage}
+
+%% Restore normal page color after title page
+\nopagecolor
+\color{black}
