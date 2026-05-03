@@ -1,0 +1,95 @@
+%% ============================================================
+%%  main.tex  –  PrepFusion GATE Counseling Guide
+%%  Master file: load style, include all chapters.
+%%
+%%  COMPILE WITH:  xelatex main  (or lualatex main)
+%%  Run twice for TOC + hyperref cross-references.
+%%
+%%  Folder structure:
+%%    main.tex
+%%    prepfusion_style.sty
+%%    logo.png                    ← place your logo here
+%%    frontmatter/
+%%        title_page.tex
+%%        disclaimer.tex
+%%        acknowledgements.tex
+%%    chapters/
+%%        01_counseling.tex
+%%        02_psu_recruitment.tex
+%%        03_interview_prep.tex
+%%        04_college_selection.tex
+%%        05_cutoffs.tex
+%%        06_financial.tex
+%%        07_research_ms.tex
+%%        08_drop_guidance.tex
+%%        09_institute_profiles.tex
+%%        10_alternative_options.tex
+%%    appendix/
+%%        A_interview_questions.tex
+%%        B_interview_experiences.tex
+%% ============================================================
+
+\documentclass[12pt, twoside, openright]{book}
+
+%% ── Load the PrepFusion style package ─────────────────────
+\usepackage{prepfusion_style}
+
+%% ── Optional: uncomment to enable watermark ───────────────
+% \watermarkon
+
+%% ── PDF metadata ──────────────────────────────────────────
+%  (already set inside prepfusion_style via hyperref options)
+
+%% ============================================================
+%%  DOCUMENT BEGINS
+%% ============================================================
+\begin{document}
+
+%% ── Front matter: no chapter numbers, roman page numbers ──
+\frontmatter
+
+\include{frontmatter/title_page}
+\include{frontmatter/disclaimer}
+\include{frontmatter/acknowledgements}
+
+%% ── Table of Contents ─────────────────────────────────────
+{
+  \hypersetup{linkcolor=pfBlue}     % TOC links in primary blue
+  \tableofcontents
+  \clearpage
+}
+
+%% ── Main matter: numbered chapters, arabic page numbers ───
+\mainmatter
+
+%% Part I – M.Tech Admissions
+\part{M.Tech Admissions}
+
+\include{chapters/01_counseling}
+\include{chapters/04_college_selection}
+\include{chapters/05_cutoffs}
+\include{chapters/06_financial}
+\include{chapters/07_research_ms}
+\include{chapters/08_drop_guidance}
+\include{chapters/09_institute_profiles}
+\include{chapters/10_alternative_options}
+
+%% Part II – PSU Recruitment
+\part{PSU Recruitment}
+
+\include{chapters/02_psu_recruitment}
+\include{chapters/03_interview_prep}
+
+%% ── Back matter: appendices ───────────────────────────────
+\appendix
+\renewcommand{\chaptermark}[1]{\markboth{Appendix \thechapter: #1}{}}
+
+\include{appendix/A_interview_questions}
+\include{appendix/B_interview_experiences}
+
+%% ── Bibliography (if references are added later) ─────────
+%\backmatter
+%\bibliographystyle{unsrt}
+%\bibliography{references}
+
+\end{document}

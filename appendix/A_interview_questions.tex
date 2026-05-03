@@ -1,0 +1,212 @@
+%% ============================================================
+%%  appendix/A_interview_questions.tex
+%%  Appendix A: Technical Interview Question Bank
+%%  Credits: Ravi, PrepFusion Community
+%% ============================================================
+
+\chapter{Technical Interview Question Bank}
+\label{app:questions}
+
+\begin{protip}[How to Use This Appendix]
+  Questions are organized by domain. Practice solving them on paper---many IIT
+  and IISc interviews require whiteboard solutions. For digital questions, also
+  draw timing diagrams and logic circuits where applicable.
+\end{protip}
+
+%% ─────────────────────────────────────────────────────────
+\section{Digital Circuits}
+\label{sec:iq-digital}
+
+\subsection{Number Systems \& Representation}
+
+\begin{enumerate}[label=\textbf{D\arabic*.}, leftmargin=*, itemsep=6pt]
+
+  \item Convert the decimal number $156.75$ into its binary, octal, and
+        hexadecimal equivalents.
+
+  \item Convert the following decimal numbers into signed binary, octal, and
+        hexadecimal using the minimum possible number of bits:
+        \begin{enumerate}[label=(\alph*)]
+          \item $+17$
+          \item $-17$
+        \end{enumerate}
+
+  \item Explain the difference between 1's complement and 2's complement
+        representations of a negative number. Why is 2's complement more widely
+        used in computer systems?
+
+  \item Explain the 2's complement representation of negative numbers. Convert
+        $13$ and $-13$ into:
+        \begin{enumerate}[label=(\alph*)]
+          \item 8-bit signed magnitude
+          \item 8-bit 1's complement
+          \item 8-bit 2's complement
+        \end{enumerate}
+
+  \item What is the difference between binary and Gray code? Why is Gray code
+        used in applications like rotary encoders?
+
+\end{enumerate}
+
+\subsection{Combinational \& Sequential Logic}
+
+\begin{enumerate}[label=\textbf{D\arabic*.}, leftmargin=*, itemsep=6pt, start=6]
+
+  \item Define a Flip-Flop. What is the difference between a latch and a
+        flip-flop?
+
+  \item Design a 4-bit binary multiplier circuit using basic gates. Draw the
+        schematic on the whiteboard.
+
+  \item Explain how a Wallace Tree multiplier works. How does it improve speed
+        over a simple array multiplier?
+
+  \item Sketch the timing diagram for a 2-bit multiplier with inputs $A = 11_2$
+        and $B = 10_2$. Show intermediate and final outputs.
+
+\end{enumerate}
+
+%% ─────────────────────────────────────────────────────────
+\section{Analog Circuits}
+\label{sec:iq-analog}
+
+\subsection{Oscillators \& Feedback}
+
+\begin{enumerate}[label=\textbf{A\arabic*.}, leftmargin=*, itemsep=6pt]
+
+  \item Draw the circuit of a Wien Bridge oscillator and explain how it sustains
+        oscillations. What sets its oscillation frequency?
+
+  \item Sketch the output waveform of an oscillator you designed. How would you
+        stabilize its amplitude?
+
+  \item Explain the role of negative feedback in an amplifier circuit. How does
+        it affect gain and stability?
+
+  \item Design an op-amp circuit with negative feedback on the whiteboard. Derive
+        its closed-loop gain.
+
+  \item What happens to an oscillator if positive feedback becomes too strong?
+        Illustrate with a block diagram.
+
+\end{enumerate}
+
+\subsection{Control Systems (Analog Context)}
+
+\begin{enumerate}[label=\textbf{A\arabic*.}, leftmargin=*, itemsep=6pt, start=6]
+
+  \item What is the dominant pole concept in control systems? How does it
+        influence system response?
+
+  \item Sketch a second-order system's pole-zero plot and explain its step
+        response.
+
+  \item How would you determine the stability of a feedback system using pole
+        locations? Show your approach.
+
+\end{enumerate}
+
+\subsection{Op-Amp Circuits}
+
+\begin{enumerate}[label=\textbf{A\arabic*.}, leftmargin=*, itemsep=6pt, start=9]
+
+  \item Given an op-amp circuit [provided by interviewer]: solve for the output
+        voltage on the whiteboard and explain each step.
+
+  \item Modify a given op-amp circuit to act as an integrator. Draw the new
+        schematic and its output waveform for a square-wave input.
+
+\end{enumerate}
+
+\subsection{Differential Amplifiers}
+
+\begin{enumerate}[label=\textbf{A\arabic*.}, leftmargin=*, itemsep=6pt, start=11]
+
+  \item Draw a differential amplifier using MOSFETs. Calculate its differential
+        gain and show the small-signal model.
+
+  \item What happens to the CMRR if there is a mismatch in the differential pair?
+        Explain with a diagram.
+
+  \item Sketch the input and output waveforms of a differential amplifier for a
+        sinusoidal differential input.
+
+\end{enumerate}
+
+%% ─────────────────────────────────────────────────────────
+\section{Power Systems (EE Domain)}
+\label{sec:iq-power}
+
+\begin{enumerate}[label=\textbf{P\arabic*.}, leftmargin=*, itemsep=6pt]
+
+  \item Explain the working principle of a \textbf{synchronous machine} and
+        describe the role of the excitation system.
+
+  \item What is the difference between an \textbf{induction motor} and a
+        synchronous motor? Describe starting methods for induction motors.
+
+  \item Explain \textbf{power system protection} principles: What is a
+        differential relay and when is it used?
+
+  \item Define \textbf{transient stability} in a power system. Sketch the
+        equal area criterion for a fault.
+
+  \item What are the nameplates and typical ratings of a 100~kVA,
+        11~kV/415~V distribution transformer?
+
+\end{enumerate}
+
+%% ─────────────────────────────────────────────────────────
+\section{IISc Analog Domain Interview (Sample Session)}
+\label{sec:iisc-analog-session}
+
+\begin{experience}{Anonymous Candidate}{IISc Bangalore -- Analog Domain}
+
+  \textbf{Interviewer:} Prof.\ Aniruddhan
+  \hfill\textbf{Duration:} 30--35 minutes
+
+  \vspace{4pt}
+  \textbf{Focus areas:} Oscillator design, Feedback concepts, Control Systems,
+  Op-Amp circuits, Differential amplifiers.
+
+  \vspace{4pt}
+  \textbf{Style:} Intense, whiteboard problem-solving, follow-ups on written
+  test mistakes.
+
+  \begin{pfChecklist}
+    \item Draw a Wien Bridge oscillator and explain oscillation sustainment.
+    \item Design an op-amp circuit with negative feedback; derive closed-loop
+          gain on the whiteboard.
+    \item Explain the dominant pole concept and sketch a second-order system's
+          step response.
+    \item Draw a MOSFET differential amplifier; calculate differential gain and
+          show the small-signal model.
+    \item What happens to CMRR with mismatch in the differential pair?
+  \end{pfChecklist}
+
+  \textbf{Tip:} Interviewers at IISc often revisit questions you answered
+  incorrectly in the written test. Prepare to solve similar problems on the spot.
+\end{experience}
+
+%% ─────────────────────────────────────────────────────────
+\section{IISc Digital Domain Interview (Sample Session)}
+\label{sec:iisc-digital-session}
+
+\begin{experience}{Anonymous Candidate}{IISc Bangalore -- Digital Domain}
+
+  \textbf{Interviewers:} Prof.\ Janakiraman \& Prof.\ Vinita Vasudevan
+  \hfill\textbf{Duration:} $\approx$10 minutes
+
+  \vspace{4pt}
+  \textbf{Focus:} Multiplier circuits, domain interest.
+
+  \begin{pfChecklist}
+    \item Design a 4-bit binary multiplier using basic gates.
+    \item Explain Wallace Tree multiplier and its speed advantage.
+    \item Draw the timing diagram for a 2-bit multiplier: $A=11_2$, $B=10_2$.
+  \end{pfChecklist}
+
+  \textbf{Note:} The panel also asked about the candidate's genuine interest in
+  the digital domain vs.\ analog, and requested an example of a digital circuit
+  they had worked on.
+\end{experience}

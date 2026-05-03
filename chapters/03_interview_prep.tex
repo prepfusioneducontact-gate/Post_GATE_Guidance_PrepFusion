@@ -1,0 +1,147 @@
+%% ============================================================
+%%  chapters/03_interview_prep.tex
+%%  Chapter 3: Interview Preparation (MTech, MS, PSU)
+%% ============================================================
+
+\chapter{Interview Preparation}
+\label{chap:interview-prep}
+
+%% ─────────────────────────────────────────────────────────
+\section{General Strategy}
+\label{sec:interview-strategy}
+
+\begin{protip}[Core Principle]
+  \GATE preparation covers the majority of the technical syllabus. Shift your
+  focus from \emph{formula memorization} to \emph{conceptual understanding}---IISc
+  panels in particular emphasize fundamentals over rote recall.
+\end{protip}
+
+\subsection{For M.Tech Interviews (IITs)}
+
+\begin{pfChecklist}
+  \item Master EC core subjects: \textbf{Analog} and \textbf{Digital circuits}.
+  \item Do not neglect \textbf{Communications}---IIT panels ask from it
+        occasionally.
+  \item For AI/ML branches: basic \textbf{C coding}, \textbf{linear algebra},
+        and \textbf{matrices} are frequently tested.
+  \item Focus on \textbf{fundamentals}, not just formulae.
+\end{pfChecklist}
+
+\subsection{For M.Tech Research / MS RA Interviews}
+
+\begin{pfChecklist}
+  \item Prepare your UG final year project and any published papers thoroughly.
+        Interviews often involve a discussion of your own work.
+  \item Expect follow-up questions on the \textbf{technology behind your project}.
+  \item IISc panels are particularly rigorous---expect whiteboard problem-solving.
+\end{pfChecklist}
+
+\subsection{For PSU Interviews}
+
+See Chapter~\ref{chap:psu}, Section~\ref{sec:psu-prep} for a detailed strategy.
+
+%% ─────────────────────────────────────────────────────────
+\section{Branch-wise Focus Areas}
+\label{sec:branch-focus}
+
+\begin{tblr}{
+    colspec = {X[2,l] X[5,l]},
+    hlines, vlines,
+    row{1} = {bg=pfBlue, fg=white, font=\sffamily\bfseries},
+    row{2,4,6,8} = {bg=pfGrey},
+  }
+  \toprule
+  Branch / Domain & Key Topics to Prepare \\
+  \midrule
+  VLSI / Microelectronics (ECE)
+    & Analog circuits, Digital circuits, Device physics,
+      CMOS design, Transistor-level design \\
+  Signal Processing / Communications
+    & DSP fundamentals, Modulation, Fourier analysis,
+      Filter design \\
+  Power Electronics / EE (IITs)
+    & Power system protection, Stability analysis,
+      Electrical machines, Power electronics \\
+  AI/ML (Interdisciplinary)
+    & Linear algebra, Probability, Basic C/Python,
+      Machine learning fundamentals \\
+  IISc (all branches)
+    & Heavy emphasis on fundamentals; expect whiteboard derivations
+      and follow-up questions on incorrect answers \\
+  \bottomrule
+\end{tblr}
+
+%% ─────────────────────────────────────────────────────────
+\section{Recommended Preparation Resources}
+\label{sec:resources}
+
+\begin{tblr}{
+    colspec = {X[2,l] X[3,l] X[4,l]},
+    hlines, vlines,
+    row{1} = {bg=pfBlue, fg=white, font=\sffamily\bfseries},
+    row{2,4,6} = {bg=pfGrey},
+  }
+  \toprule
+  Subject & Resource & Link / Notes \\
+  \midrule
+  All Subjects (Interview)
+    & PrepFusion Free Course
+    & \url{https://prepfusion.in/new-courses/46/content} \\
+  Electrical Networks \& RC Circuits
+    & NPTEL -- Dr.\ Nagendra Krishnapura
+    & Available on YouTube / NPTEL website \\
+  Analog Circuits (BJT, MOS, Diode)
+    & NPTEL -- Dr.\ Nagendra Krishnapura
+    & Same playlist as Networks \\
+  Digital Circuits \& Math
+    & GATE Syllabus + Standard textbooks
+    & Sufficient for most M.Tech interviews \\
+  IISc Interview Experiences
+    & PrepFusion Interview Prep Video
+    & \url{https://youtu.be/gjFeuFKBALQ} \\
+  \bottomrule
+\end{tblr}
+
+\begin{protip}[Free vs.\ Paid Courses]
+  PrepFusion's free courses cover all fundamental concepts required for M.Tech
+  interviews. Premium options offer additional technical and aptitude-based
+  training. The free course is an excellent starting point before investing in
+  paid resources.
+\end{protip}
+
+%% ─────────────────────────────────────────────────────────
+\section{Preparing for the IAP Branch}
+\label{sec:iap}
+
+For the \textbf{Integrated Analog Pathfinder (IAP)} branch or similar
+analog-focused programs at IISc:
+
+\begin{pfChecklist}
+  \item Study \textbf{oscillator design} thoroughly (Wien Bridge, Colpitts, etc.).
+  \item Understand \textbf{negative feedback} deeply---its effect on gain,
+        bandwidth, and stability.
+  \item Practice \textbf{op-amp circuit} analysis on paper/whiteboard.
+  \item Revise \textbf{differential amplifiers}: small-signal model, CMRR,
+        differential gain.
+  \item Brush up on \textbf{control systems} fundamentals (dominant pole,
+        pole-zero plots, step response).
+\end{pfChecklist}
+
+%% ─────────────────────────────────────────────────────────
+\section{Frequently Asked Questions}
+\label{sec:interview-faq}
+
+\begin{faqentry}{What kind of questions are asked in interviews for VLSI and
+  related branches?}
+  It depends on the panel. Generally, questions come from \textbf{analog} and
+  \textbf{digital circuits}. Device physics questions may also be asked to EC
+  students. IISc panels additionally ask \textbf{power electronics} questions of
+  EE students and occasionally \textbf{communications} questions of EC students.
+\end{faqentry}
+
+\begin{faqentry}{How to prepare for MS and M.Tech RA program interviews?}
+  Similar to M.Tech interviews, but with an additional component: the
+  \textbf{projects and papers} you mentioned in your application are actively
+  discussed. Prepare to defend your research interests and explain technical
+  choices you made during your UG project.
+\end{faqentry}

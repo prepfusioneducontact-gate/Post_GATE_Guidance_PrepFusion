@@ -1,0 +1,94 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{Disclaimer}{iii}{chapter*.1}%
+\contentsline {chapter}{Acknowledgements}{v}{chapter*.2}%
+\contentsline {part}{I\hspace {1em}M.Tech Admissions}{1}{part.3}%
+\contentsline {chapter}{\numberline {1}Counseling \& Admission Process}{3}{chapter.4}%
+\contentsline {section}{\numberline {1.1}Overview of the Two Portals}{3}{section.5}%
+\contentsline {section}{\numberline {1.2}The COAP Process (IITs \& IISc)}{3}{section.6}%
+\contentsline {subsection}{\numberline {1.2.1}Step-by-Step Workflow}{3}{subsection.7}%
+\contentsline {subsection}{\numberline {1.2.2}Interviews at IITs: Which Institutes Require Them?}{4}{subsection.14}%
+\contentsline {section}{\numberline {1.3}The CCMT Process (NITs \& CFTIs)}{5}{section.15}%
+\contentsline {section}{\numberline {1.4}CFTI Mode Admissions}{6}{section.16}%
+\contentsline {section}{\numberline {1.5}Documents Required}{6}{section.17}%
+\contentsline {section}{\numberline {1.6}Key Dates \& Timeline}{6}{section.18}%
+\contentsline {section}{\numberline {1.7}Frequently Asked Questions}{7}{section.19}%
+\contentsline {chapter}{\numberline {2}College \& Branch Selection}{9}{chapter.20}%
+\contentsline {section}{\numberline {2.1}Top Institutes for VLSI / ECE}{9}{section.21}%
+\contentsline {section}{\numberline {2.2}Best IIT for Analog Roles}{9}{section.22}%
+\contentsline {section}{\numberline {2.3}Top Courses at IISc by Placement}{9}{section.23}%
+\contentsline {section}{\numberline {2.4}Pure VLSI vs.\ Related Fields}{10}{section.24}%
+\contentsline {section}{\numberline {2.5}NIT Trichy (Communication) vs.\ NIT Calicut (VLSI)}{10}{section.25}%
+\contentsline {chapter}{\numberline {3}GATE Score \& Cutoff Analysis}{11}{chapter.26}%
+\contentsline {section}{\numberline {3.1}IIT / IISc Cutoffs for VLSI Branches}{11}{section.27}%
+\contentsline {section}{\numberline {3.2}Official Cutoff References}{11}{section.28}%
+\contentsline {section}{\numberline {3.3}PSU Cutoff Reference}{12}{section.29}%
+\contentsline {section}{\numberline {3.4}Low Score Options (40 marks / $\sim $560 score)}{12}{section.30}%
+\contentsline {chapter}{\numberline {4}Financial \& Loan-Related Queries}{13}{chapter.31}%
+\contentsline {section}{\numberline {4.1}Fee Waivers \& Scholarships}{13}{section.32}%
+\contentsline {section}{\numberline {4.2}Admission Fee Management}{13}{section.33}%
+\contentsline {section}{\numberline {4.3}Self-Sponsored Courses}{13}{section.34}%
+\contentsline {chapter}{\numberline {5}Research \& MS Programs}{15}{chapter.35}%
+\contentsline {section}{\numberline {5.1}M.Tech Research vs.\ M.Tech (2-Year)}{15}{section.36}%
+\contentsline {section}{\numberline {5.2}Should I Pursue MS with a Low GATE Score?}{15}{section.37}%
+\contentsline {section}{\numberline {5.3}Statement of Purpose (SOP)}{16}{section.38}%
+\contentsline {section}{\numberline {5.4}Scope of M.Tech Research in ECE at IISc}{16}{section.39}%
+\contentsline {chapter}{\numberline {6}Drop Year \& Career Guidance}{17}{chapter.40}%
+\contentsline {section}{\numberline {6.1}Should I Take a Drop?}{17}{section.41}%
+\contentsline {section}{\numberline {6.2}What If I Don't Qualify for GATE?}{17}{section.42}%
+\contentsline {section}{\numberline {6.3}SSC JE Alongside M.Tech?}{18}{section.43}%
+\contentsline {section}{\numberline {6.4}Other Options If Not IIT/NIT}{18}{section.44}%
+\contentsline {chapter}{\numberline {7}Institute-Wise Program Profiles}{19}{chapter.45}%
+\contentsline {section}{\numberline {7.1}IISc Bangalore}{19}{section.46}%
+\contentsline {section}{\numberline {7.2}IIT Delhi}{19}{section.47}%
+\contentsline {section}{\numberline {7.3}IIT Kanpur}{20}{section.48}%
+\contentsline {section}{\numberline {7.4}IIT Kharagpur}{20}{section.49}%
+\contentsline {section}{\numberline {7.5}IIT Roorkee}{21}{section.50}%
+\contentsline {section}{\numberline {7.6}IIT Guwahati}{22}{section.51}%
+\contentsline {section}{\numberline {7.7}IIT Hyderabad}{22}{section.52}%
+\contentsline {section}{\numberline {7.8}Other IITs --- Quick Reference}{23}{section.53}%
+\contentsline {section}{\numberline {7.9}COAP Admission Flowchart}{23}{section.54}%
+\contentsline {chapter}{\numberline {8}Alternative Options for M.Tech}{25}{chapter.56}%
+\contentsline {section}{\numberline {8.1}BITS Pilani --- Higher Degree (HD) Program}{25}{section.57}%
+\contentsline {section}{\numberline {8.2}IIIT Hyderabad --- PGEE}{25}{section.58}%
+\contentsline {section}{\numberline {8.3}IIIT Delhi}{26}{section.59}%
+\contentsline {section}{\numberline {8.4}Other Alternatives}{26}{section.60}%
+\contentsline {section}{\numberline {8.5}Masters in Power Electronics from IITs}{26}{section.61}%
+\contentsline {part}{II\hspace {1em}PSU Recruitment}{27}{part.62}%
+\contentsline {chapter}{\numberline {9}PSU Recruitment \& Preparation}{29}{chapter.63}%
+\contentsline {section}{\numberline {9.1}Overview of PSU Recruitment Modes}{29}{section.64}%
+\contentsline {section}{\numberline {9.2}Recruitment Process (Step-by-Step)}{29}{section.65}%
+\contentsline {section}{\numberline {9.3}Score Weightage Breakdown}{30}{section.71}%
+\contentsline {section}{\numberline {9.4}Rank-wise PSU Expectation (ECE, OBC Category)}{31}{section.72}%
+\contentsline {section}{\numberline {9.5}Career Growth in PSUs}{31}{section.73}%
+\contentsline {section}{\numberline {9.6}PSU Interview Preparation Strategy}{31}{section.74}%
+\contentsline {subsection}{\numberline {9.6.1}Technical Preparation}{31}{subsection.75}%
+\contentsline {subsection}{\numberline {9.6.2}Non-Technical / HR Preparation}{32}{subsection.76}%
+\contentsline {subsection}{\numberline {9.6.3}M.Tech vs.\ Direct PSU}{32}{subsection.77}%
+\contentsline {section}{\numberline {9.7}Frequently Asked Questions}{32}{section.78}%
+\contentsline {chapter}{\numberline {10}Interview Preparation}{33}{chapter.79}%
+\contentsline {section}{\numberline {10.1}General Strategy}{33}{section.80}%
+\contentsline {subsection}{\numberline {10.1.1}For M.Tech Interviews (IITs)}{33}{subsection.81}%
+\contentsline {subsection}{\numberline {10.1.2}For M.Tech Research / MS RA Interviews}{33}{subsection.82}%
+\contentsline {subsection}{\numberline {10.1.3}For PSU Interviews}{33}{subsection.83}%
+\contentsline {section}{\numberline {10.2}Branch-wise Focus Areas}{34}{section.84}%
+\contentsline {section}{\numberline {10.3}Recommended Preparation Resources}{34}{section.85}%
+\contentsline {section}{\numberline {10.4}Preparing for the IAP Branch}{35}{section.86}%
+\contentsline {section}{\numberline {10.5}Frequently Asked Questions}{35}{section.87}%
+\contentsline {chapter}{\numberline {A}Technical Interview Question Bank}{37}{appendix.88}%
+\contentsline {section}{\numberline {A.1}Digital Circuits}{37}{section.89}%
+\contentsline {subsection}{\numberline {A.1.1}Number Systems \& Representation}{37}{subsection.90}%
+\contentsline {subsection}{\numberline {A.1.2}Combinational \& Sequential Logic}{37}{subsection.101}%
+\contentsline {section}{\numberline {A.2}Analog Circuits}{38}{section.106}%
+\contentsline {subsection}{\numberline {A.2.1}Oscillators \& Feedback}{38}{subsection.107}%
+\contentsline {subsection}{\numberline {A.2.2}Control Systems (Analog Context)}{38}{subsection.113}%
+\contentsline {subsection}{\numberline {A.2.3}Op-Amp Circuits}{38}{subsection.117}%
+\contentsline {subsection}{\numberline {A.2.4}Differential Amplifiers}{39}{subsection.120}%
+\contentsline {section}{\numberline {A.3}Power Systems (EE Domain)}{39}{section.124}%
+\contentsline {section}{\numberline {A.4}IISc Analog Domain Interview (Sample Session)}{39}{section.130}%
+\contentsline {section}{\numberline {A.5}IISc Digital Domain Interview (Sample Session)}{40}{section.131}%
+\contentsline {chapter}{\numberline {B}Student Interview Experiences}{41}{appendix.132}%
+\contentsline {section}{\numberline {B.1}How to Contribute Your Experience}{41}{section.133}%
+\contentsline {section}{\numberline {B.2}Experience Template Reference}{41}{section.134}%
+\contentsline {section}{\numberline {B.3}IISc Bangalore}{42}{section.135}%
+\contentsline {section}{\numberline {B.4}IIT Delhi}{42}{section.136}%
+\contentsline {section}{\numberline {B.5}IIT Bombay}{42}{section.137}%
